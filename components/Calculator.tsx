@@ -14,15 +14,19 @@ interface HistoryItem {
     calculationName: string;
     calculationPattern: string;
     result: string;
-  }
+}
 
 const Calculator = ({ result, setResult, setHistory }: Props) => {
     const [calculationName, setCalculationName] = useState<string>('');
     const [calculationHistory, setCalculationHistory] = useState<string>('');
     const [selectedOperator, setSelectedOperator] = useState<string>('');
 
+    console.log("result", result)
+    console.log("calculationHistory", calculationHistory);
+    console.log("selectedOperator", selectedOperator);
+
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const buttonName:string  = e.currentTarget.name;
+        const buttonName: string = e.currentTarget.name;
 
         if (isNaN(Number(buttonName))) {
             if (selectedOperator && selectedOperator !== buttonName) {
@@ -51,6 +55,11 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
         setSelectedOperator('');
     };
 
+    const backspace = () => {
+        setResult(result.slice(0, -1));
+        setSelectedOperator('');
+    };
+
     const calculate = () => {
         try {
             setCalculationHistory(result)
@@ -62,7 +71,7 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
     };
 
     const inputButtonOption = [
-        { "name": "clear", "value": "AC", "type": "remove" },
+        { "name": "", "value": /[+\-*/]/.test(result) ? "C" : "AC", "type": /[+\-*/]/.test(result) ? "remove" : "all_remove" },
         { "name": "-", "value": "+/-", "type": "algebra" },
         { "name": "%", "value": "%", "type": "algebra" },
         { "name": "/", "value": "/", "type": "method" },
@@ -87,6 +96,7 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
         let color = "";
         switch (type) {
             case "remove":
+            case "all_remove":
             case "algebra":
                 color = 'bg-algebra';
                 break;
@@ -134,8 +144,12 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
     }
 
     const handleAction = (e: React.MouseEvent<HTMLButtonElement>, type: string) => {
+        console.log("type", type)
         switch (type) {
             case "remove":
+                backspace();
+                break;
+            case "all_remove":
                 clear();
                 break;
             case "method":
