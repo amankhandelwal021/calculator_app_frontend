@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.custom-table th {
+  @apply text-start px-2 md:px-4 py-2;
+}
+
+.custom-table td {
+  @apply text-start px-2 md:px-4 py-2 font-semibold;
+}
+
+.element-hover {
+  @apply hover:cursor-pointer hover:opacity-75 duration-300
+}
+
+.calculator-display {
+  @apply h-20 w-full text-4xl py-3 px-5 border-none outline-none text-end
+}
+
+.auth-input {
+  @apply border-[2px] border-gray-300 py-3 px-3 w-full rounded-md text-black outline-none font-medium placeholder:text-gray-500 text-sm
+}
+
+.auth-button {
+  @apply bg-blue-900/[0.8] text-sm tracking-wider rounded-md px-12 py-3 w-full font-semibold element-hover
+}
+
+.submit-button {
+  @apply bg-blue-900/[0.8] text-sm font-medium rounded-md px-12 py-2 element-hover
+}
+
+.input-field {
+  @apply border-[2px] border-gray-300 py-2 px-3 w-52 rounded-md text-black outline-none font-medium placeholder:text-gray-500 text-sm
+}
+
+.heading {
+  @apply text-black text-3xl font-bold
+}
+
+.auth-info-text {
+  @apply text-black text-sm text-center font-normal
+}
+
+.auth-info-link {
+  @apply font-semibold text-blue-900/[0.8]
+}
