@@ -21,10 +21,6 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
     const [calculationHistory, setCalculationHistory] = useState<string>('');
     const [selectedOperator, setSelectedOperator] = useState<string>('');
 
-    console.log("result", result)
-    console.log("calculationHistory", calculationHistory);
-    console.log("selectedOperator", selectedOperator);
-
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const buttonName: string = e.currentTarget.name;
 
@@ -144,7 +140,6 @@ const Calculator = ({ result, setResult, setHistory }: Props) => {
     }
 
     const handleAction = (e: React.MouseEvent<HTMLButtonElement>, type: string) => {
-        console.log("type", type)
         switch (type) {
             case "remove":
                 backspace();
