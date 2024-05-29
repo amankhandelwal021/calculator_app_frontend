@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Calculator Application
+
+## Project Overview
+
+This project is a calculator application built with [Next.js v14.2](https://nextjs.org/), utilizing [TypeScript](https://www.typescriptlang.org/) for type safety and [Tailwind CSS](https://tailwindcss.com/) for styling. The application allows users to perform simple calculations such as addition, subtraction, multiplication, division, and percentage. It also features a history of calculations, with options to recalculate or delete past entries.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Perform basic arithmetic operations: addition, subtraction, multiplication, division, and percentage.
+- Display the calculated answer in real-time.
+- Maintain a history of calculations performed by the user.
+- Option to recalculate past calculations from the history.
+- Option to delete previous calculations from the history.
+- Accessible UI with custom CSS styling, utilizing Tailwind CSS.
+
+## Tech Stack
+
+- *Next.js v14.2*: The React framework for production.
+- *TypeScript*: Typed JavaScript at any scale.
+- *Tailwind CSS*: A utility-first CSS framework.
+- *React*: A JavaScript library for building user interfaces.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Make sure you have the following installed on your local development machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Node.js](https://nodejs.org/): LTS version recommended.
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/): Package manager.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. *Clone the repository:*
 
-## Learn More
+   bash
+   git clone https://github.com/your-username/nextjs-calculator.git
+   cd nextjs-calculator
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   bash
+   npm i
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. *Run the development server:*
 
-## Deploy on Vercel
+   bash
+   npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Build for production:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   bash
+   npm run build
+   npm start
